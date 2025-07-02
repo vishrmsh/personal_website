@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Vish Ramesh, PhD - CEO & Founder of Vy Labs AI</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,10 +14,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -24,81 +26,103 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            gap: 32px;
-            grid-template-columns: 1fr;
+            gap: 24px;
         }
 
         .hero-section {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
             text-align: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 24px;
-            display: block;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
         }
 
         .profile-image:hover {
             transform: scale(1.05);
-            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .company-logo:hover {
+            opacity: 1;
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #1a1a1a;
             margin-bottom: 12px;
         }
 
         .title {
-            font-size: 24px;
-            font-weight: 500;
+            font-size: 1.4rem;
+            font-weight: 600;
             color: #0066CC;
             margin-bottom: 8px;
         }
 
         .tagline {
-            font-size: 18px;
-            font-weight: 400;
+            font-size: 1.1rem;
+            font-weight: 500;
             color: #666;
             margin-bottom: 24px;
         }
 
         .summary {
-            font-size: 16px;
+            font-size: 1rem;
             color: #444;
-            margin-bottom: 32px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
         }
 
         .content-section {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
             padding: 32px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .content-section:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
         }
 
         .section-title {
-            font-size: 20px;
-            font-weight: 600;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #0066CC;
             margin-bottom: 16px;
             display: flex;
@@ -107,53 +131,82 @@
         }
 
         .section-content {
-            font-size: 16px;
             color: #444;
-            white-space: pre-line;
+            line-height: 1.6;
+        }
+
+        .section-content strong {
+            color: #333;
         }
 
         .links-section {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 12px;
-            padding: 32px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .links-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         .links-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 16px;
-            margin-bottom: 32px;
+            margin-bottom: 30px;
         }
 
         .professional-link {
-            background: #f8f9fa;
-            border: none;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 1px solid #dee2e6;
+            border-radius: 12px;
             padding: 16px 24px;
-            font-size: 16px;
+            font-size: 1rem;
             font-weight: 500;
             color: #333;
             text-decoration: none;
             display: block;
             text-align: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .professional-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .professional-link:hover::before {
+            left: 100%;
         }
 
         .professional-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #0066CC;
         }
 
         .professional-link.primary {
-            background: #0066CC;
+            background: linear-gradient(135deg, #0066CC, #004499);
             color: white;
-            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+            border-color: #0066CC;
         }
 
         .professional-link.primary:hover {
-            box-shadow: 0 12px 35px rgba(0, 102, 204, 0.4);
+            background: linear-gradient(135deg, #0052A3, #003366);
         }
 
         .social-links {
@@ -165,72 +218,79 @@
 
         .social-link {
             background: #f8f9fa;
-            border: none;
+            border: 1px solid #dee2e6;
             border-radius: 8px;
             padding: 12px 20px;
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 500;
             color: #333;
             text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
         .social-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background: #e9ecef;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .dissertation-highlight {
-            background: rgba(0, 102, 204, 0.05);
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 102, 204, 0.05));
+            border: 1px solid rgba(0, 102, 204, 0.2);
             border-radius: 8px;
-            padding: 12px;
+            padding: 16px;
             margin: 16px 0;
-            border-left: 4px solid #0066CC;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .dissertation-highlight:hover {
-            background: rgba(0, 102, 204, 0.1);
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(0, 102, 204, 0.08));
+            transform: scale(1.01);
         }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .contact-info {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         @media (max-width: 768px) {
             .container {
                 padding: 16px;
-                gap: 24px;
-            }
-
-            h1 {
-                font-size: 36px;
-            }
-
-            .title {
-                font-size: 20px;
+                gap: 20px;
             }
 
             .hero-section,
             .content-section,
-            .links-section {
+            .links-section,
+            .contact-info {
                 padding: 24px;
             }
 
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
             .profile-image {
-                width: 150px;
-                height: 150px;
+                width: 120px;
+                height: 120px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .title {
+                font-size: 1.2rem;
             }
 
             .links-grid {
@@ -241,8 +301,11 @@
 </head>
 <body>
     <div class="container">
-        <section class="hero-section fade-in">
-            <img src="vish_ramesh.jpeg" alt="Dr. Vish Ramesh, PhD - CEO & Founder of Vy Labs AI" class="profile-image">
+        <section class="hero-section">
+            <div class="profile-container">
+                <img src="vish_ramesh.jpeg" alt="Dr. Vish Ramesh, PhD" class="profile-image">
+                <img src="vy_labs_logo.jpg" alt="Vy Labs AI" class="company-logo">
+            </div>
             <h1>Dr. Vish Ramesh, PhD</h1>
             <div class="title">CEO & Founder of Vy Labs AI</div>
             <div class="tagline">Bringing AI to All</div>
@@ -251,37 +314,55 @@
             </div>
         </section>
 
-        <section class="content-section fade-in">
-            <div class="section-title">🚀 Current Leadership</div>
-            <div class="section-content">CEO & Founder - Vy Labs AI (2024-Present)
-Building next-generation AI platforms to democratize access globally.</div>
-        </section>
+        <div class="content-grid">
+            <section class="content-section">
+                <div class="section-title">🚀 Current Leadership</div>
+                <div class="section-content">
+                    <strong>CEO & Founder - Vy Labs AI (2024-Present)</strong><br>
+                    Building next-generation AI platforms to democratize access globally.
+                </div>
+            </section>
 
-        <section class="content-section fade-in">
-            <div class="section-title">💡 Recent Experience</div>
-            <div class="section-content">R&D Leadership - Vy Ventures (2023)
-CEO & Founder - Ilomai Health Solutions (2020-2022)
-Industry: Samsung Research America, IBM TJ Watson Research</div>
-        </section>
+            <section class="content-section">
+                <div class="section-title">💡 Recent Experience</div>
+                <div class="section-content">
+                    <strong>R&D Leadership - Vy Ventures (2023)</strong><br>
+                    <strong>CEO & Founder - Ilomai Health Solutions (2020-2022)</strong><br>
+                    <strong>Industry:</strong> Samsung Research America, IBM TJ Watson Research
+                </div>
+            </section>
 
-        <section class="content-section fade-in">
-            <div class="section-title">🎓 Academic Excellence</div>
-            <div class="section-content">PhD in Bioengineering - UC San Diego (2020)
-<div class="dissertation-highlight" onclick="openLink('https://escholarship.org/content/qt2g61p87c/qt2g61p87c_noSplash_4f64d6ca52484dc00a698b4f914266c3.pdf')">
-<strong>Dissertation: Human-Centered Machine Learning for Healthcare</strong>
-</div>
-BS in Bioengineering - UCLA (2015, Summa cum laude)</div>
-        </section>
+            <section class="content-section">
+                <div class="section-title">🎓 Academic Excellence</div>
+                <div class="section-content">
+                    <strong>PhD in Bioengineering - UC San Diego (2020)</strong><br>
+                    <div class="dissertation-highlight" onclick="openLink('https://escholarship.org/content/qt2g61p87c/qt2g61p87c_noSplash_4f64d6ca52484dc00a698b4f914266c3.pdf')">
+                        <strong>Dissertation: Human-Centered Machine Learning for Healthcare</strong>
+                    </div>
+                    <strong>BS in Bioengineering - UCLA (2015, Summa cum laude)</strong>
+                </div>
+            </section>
 
-        <section class="links-section fade-in">
+            <section class="content-section">
+                <div class="section-title">📧 Connect</div>
+                <div class="section-content">
+                    <strong>Professional Email:</strong> vramesh@vylabs.ai<br>
+                    <strong>Professional inquiries welcome</strong>
+                </div>
+            </section>
+        </div>
+
+        <section class="links-section">
+            <div class="links-title">Professional Links</div>
             <div class="links-grid">
                 <a href="https://vylabs.ai/" class="professional-link primary" target="_blank" rel="noopener noreferrer">Vy Labs AI</a>
                 <a href="https://scholar.google.com/citations?user=ePqYlWoAAAAJ&hl=en&oi=ao" class="professional-link" target="_blank" rel="noopener noreferrer">Google Scholar</a>
                 <a href="https://escholarship.org/content/qt2g61p87c/qt2g61p87c_noSplash_4f64d6ca52484dc00a698b4f914266c3.pdf" class="professional-link" target="_blank" rel="noopener noreferrer">PhD Dissertation</a>
-                <a href="https://www.vishramesh.com/_files/ugd/9504ed_a4bc83f62935453aac4f1e6ce35e02cc.pdf" class="professional-link" target="_blank" rel="noopener noreferrer">Executive CV</a>
+                <a href="https://drive.google.com/file/d/1l7f8pk3Zvk-tVfLTMknuL9BjqCQ6viL5/view?pli=1" class="professional-link" target="_blank" rel="noopener noreferrer">Executive CV</a>
                 <a href="https://vy.ventures/" class="professional-link" target="_blank" rel="noopener noreferrer">Vy Ventures</a>
                 <a href="https://hxi.ucsd.edu/project/ubistroke/" class="professional-link" target="_blank" rel="noopener noreferrer">UbiStroke Research</a>
-                <a href="https://www.homnihealth.com/" class="professional-link" target="_blank" rel="noopener noreferrer">Homni Health</a>
+                <a href="https://drive.google.com/file/d/14OpDjsho4Yhmkfvo3WLmQvFpKmlbabRw/view" class="professional-link" target="_blank" rel="noopener noreferrer">Research Portfolio</a>
+                <a href="https://drive.google.com/file/d/1hdfVbbw4CXnk6wxZNIsujdcrQLu6SEc6/view" class="professional-link" target="_blank" rel="noopener noreferrer">Publications</a>
             </div>
 
             <div class="social-links">
@@ -290,26 +371,13 @@ BS in Bioengineering - UCLA (2015, Summa cum laude)</div>
                 <a href="mailto:vramesh@vylabs.ai?subject=Professional Inquiry - Dr. Vish Ramesh&body=Hello Dr. Ramesh,%0A%0AI would like to discuss a professional opportunity...%0A%0ABest regards," class="social-link">Professional Contact</a>
             </div>
         </section>
-
-        <section class="content-section fade-in">
-            <div class="section-title">📧 Connect</div>
-            <div class="section-content">vramesh@vylabs.ai
-Professional inquiries welcome</div>
-        </section>
     </div>
 
     <script>
-        // Add staggered animations
-        const elements = document.querySelectorAll('.fade-in');
-        elements.forEach((element, index) => {
-            element.style.animationDelay = `${index * 0.2}s`;
-        });
-
         function openLink(url) {
             window.open(url, '_blank', 'noopener,noreferrer');
         }
 
-        // Add some interactive polish
         document.querySelectorAll('.professional-link, .social-link').forEach(link => {
             link.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-2px)';
