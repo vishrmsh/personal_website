@@ -2,10 +2,10 @@
   "name": "vishrmsh-personal-portfolio",
   "version": "1.0.0",
   "description": "Professional portfolio website for Dr. Vish Ramesh - CEO & Founder of Vy Labs AI",
-  "author": "Dr. Vish Ramesh <vramesh@vylabs.ai>",
+  "author": "Dr. Vish Ramesh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vishrmsh/personal_website.git"
+    "url": "git+https://github.com/vishrmsh/personal_website.git"
   },
   "homepage": "https://www.vishrmsh.com",
   "devDependencies": {

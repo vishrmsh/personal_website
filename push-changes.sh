@@ -5,7 +5,7 @@
 
 set -e
 
-echo "🚀 Auto-committing and pushing changes to GitHub..."
+echo "🚀 Auto-committing and pushing changes..."
 
 # Add all changes
 git add .
@@ -31,5 +31,4 @@ git commit -m "$COMMIT_MSG"
 echo "⬆️  Pushing to GitHub..."
 git push origin main
 
-echo "✅ Successfully pushed changes to GitHub!"
-echo "🌐 View at: https://github.com/vishrmsh/personal_website" 
+echo "✅ Successfully pushed changes to GitHub!" 
