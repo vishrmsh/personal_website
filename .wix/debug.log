@@ -1423,3 +1423,94 @@ Request Info
     }
   }
 }
+----- CLI crash report at 2025-07-02T05:51:29.588Z
+Error Trace
+FailedToFetchPackageDetails: FailedToFetchPackageDetails
+    at fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:54:11)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteCache: FailedToWriteCache
+    at Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:75:13)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteJson: FailedToWriteJson
+    at writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:29:11)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@wix/cli/version.cache.json'
+    at async open (node:internal/fs/promises:638:25)
+    at async writeFile (node:internal/fs/promises:1212:14)
+    at async writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:27:5)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+Error Info
+{}
+----- CLI crash report at 2025-07-02T05:51:30.368Z
+Error Trace
+FailedToRenewAuthTokenSiteNotFound: FailedToRenewAuthTokenSiteNotFound
+    at AuthClient.renewToken (/usr/local/lib/node_modules/@wix/cli-auth/src/client.ts:184:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async renewSiteAuth (/usr/local/lib/node_modules/@wix/cli-auth/src/auth-strategies/site-auth-strategy.ts:19:28)
+    at async Object.<anonymous> (/usr/local/lib/node_modules/@wix/cli-auth/src/auth-strategies/site-auth-strategy.ts:47:32)
+    at async isLoggedIn (/usr/local/lib/node_modules/@wix/cli-auth/src/auth-strategies/site-auth-strategy.ts:119:30)
+caused by: Error: Request failed with status code 404
+    at createHttpError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/error.ts:54:10)
+    at HttpClientNode.handleRequestError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:268:26)
+    at HttpClientNode.request (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:105:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async RetryOperation._fn (/usr/local/lib/node_modules/node_modules/p-retry/index.js:55:20)
+Error Info
+{}
+Request Info
+{
+  "request": {
+    "baseURL": "https://manage.wix.com",
+    "url": "/oauth2/token",
+    "method": "post",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+      "X-XSRF-TOKEN": "nocheck",
+      "Cookie": "XSRF-TOKEN=nocheck",
+      "User-Agent": "wix-cli",
+      "Content-Length": 351
+    },
+    "data": "{\"clientId\":\"6f95cec8-3e98-48b9-b4e5-1fb92fcd9973\",\"grantType\":\"refresh_token\",\"refreshToken\":\"JWS.eyJraWQiOiJZSEJzdUpwSCIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoiXCIyNmQ4ZjVhMS0yZjYzLTRmMDYtOTg3Ny00YjI2OThkMGRiNjFcIiIsImlhdCI6MTc1MTQzMDk0NCwiZXhwIjoxNzgyOTY2OTQ0fQ.Brve6Lr8wwEUGk-K5duYEk8747bWhIUqtbfBL8js0Kk\",\"siteId\":\"a372f911-6171-48a3-913e-d8657ffb0d7f\"}"
+  },
+  "response": {
+    "message": "Request failed with status code 404",
+    "status": 404,
+    "headers": {
+      "date": "Wed, 02 Jul 2025 05:51:30 GMT",
+      "content-type": "application/json",
+      "content-length": "270",
+      "x-wix-responded-by": "wix.identity.oauth.v1.refresh_token:Token:com.wixpress.identity.oauth2.oauth2-ng",
+      "x-envoy-upstream-service-time": "60",
+      "x-seen-by": "dwc60INy8NFddnU/0WdlOB9slopJdhD+WySraMrpIY8=,m0j2EEknGIVUW/liY8BLLuaP+MSfqUBjbmhuQAVSdtiWWveFEnegpnkLxzZh8fhS,rXUceJIlvIg2Ftogbhjv0CttQMRi/zf1/8yApP2qjFxEQfi00LSS7LJu7sdkoLsDhG1AiSOqZv3DBQ32mC0P2w==,r6yY0ta7bIKrqK70x072lRX8lmGfm5sIH4v+qm2Kjho=",
+      "x-wix-request-id": "1751435490.317849374366222547535",
+      "set-cookie": [
+        "XSRF-TOKEN=1751435490|vsMBDT4RRkjK; Path=/; Domain=.wix.com; Secure; SameSite=None"
+      ],
+      "server": "Pepyaka",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=120 ; includeSubDomains",
+      "via": "1.1 google",
+      "glb-x-seen-by": "wMMTADooq5AJ3cFomJ/MuXOQWGce7NCZXKms1ErOpBs=",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+    },
+    "data": {
+      "message": "The requested meta-site was not found. [ metaSiteId: a372f911-6171-48a3-913e-d8657ffb0d7f ]",
+      "details": {
+        "applicationError": {
+          "code": "SITE_NOT_FOUND",
+          "description": "The requested meta-site was not found. [ metaSiteId: a372f911-6171-48a3-913e-d8657ffb0d7f ]"
+        }
+      }
+    }
+  }
+}
