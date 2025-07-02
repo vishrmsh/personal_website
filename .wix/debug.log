@@ -2213,3 +2213,560 @@ caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@
     at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
 Error Info
 {}
+----- CLI crash report at 2025-07-02T07:00:17.794Z
+Error Trace
+FailedToFetchPackageDetails: FailedToFetchPackageDetails
+    at fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:54:11)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteCache: FailedToWriteCache
+    at Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:75:13)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteJson: FailedToWriteJson
+    at writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:29:11)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@wix/cli/version.cache.json'
+    at async open (node:internal/fs/promises:638:25)
+    at async writeFile (node:internal/fs/promises:1212:14)
+    at async writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:27:5)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+Error Info
+{}
+----- CLI crash report at 2025-07-02T07:00:20.290Z
+Error Trace
+FailedToSyncToRevision: FailedToSyncToRevision
+    at syncTypesWithAuth (/usr/local/lib/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:27:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/usr/local/lib/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: FailedToFetchPagesTypes: Failed to fetch the types of the site pages (revision 477)
+    at fetchPagesData (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:600:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncRevisionTypes (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:1125:21)
+    at async syncTypesWithAuth (/usr/local/lib/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:17:5)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/usr/local/lib/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: Error: Request failed with status code 404
+    at createHttpError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/error.ts:54:10)
+    at HttpClientNode.handleRequestError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:268:26)
+    at HttpClientNode.request (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:105:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async httpRequest (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:290:12)
+    at async fetchPagesData (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:591:16)
+    at async syncRevisionTypes (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:1125:21)
+    at async syncTypesWithAuth (/usr/local/lib/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:17:5)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+Error Info
+{
+  "metaSiteId": "465aed41-dc2d-41a6-9b34-ba62eff62bb1",
+  "revision": "477",
+  "model": {
+    "projectFolder": "/Users/vish/Documents/Projects/vishrmsh_personal",
+    "metaSiteId": "465aed41-dc2d-41a6-9b34-ba62eff62bb1",
+    "revision": "477"
+  }
+}
+Request Info
+{
+  "request": {
+    "baseURL": "https://editor.wix.com",
+    "url": "/_serverless/typok/v1/site/465aed41-dc2d-41a6-9b34-ba62eff62bb1/477",
+    "method": "get",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "authorization": "OauthNG.JWS.eyJraWQiOiJZSEJzdUpwSCIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiaW5zdGFuY2VcIjp7XCJpbnN0YW5jZUlkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcImFwcERlZklkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcInNpZ25EYXRlXCI6XCIyMDI1LTA3LTAyVDA0OjM4OjMwLjIwMlpcIixcInVpZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJwZXJtaXNzaW9uc1wiOlwiXCIsXCJkZW1vTW9kZVwiOmZhbHNlLFwic2l0ZU93bmVySWRcIjpcIjk1MDRlZDA5LWQyMDEtNGVjYi1hMTdlLTc1ZTRhZDMzZWVjOFwiLFwibWV0YVNpdGVJZFwiOlwiNDY1YWVkNDEtZGMyZC00MWE2LTliMzQtYmE2MmVmZjYyYmIxXCIsXCJleHBpcmF0aW9uRGF0ZVwiOlwiMjAyNS0wNy0wMlQwODozODozMC4yMDJaXCIsXCJsb2dpbkFjY291bnRJZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJhb3JcIjp0cnVlfX0iLCJpYXQiOjE3NTE0MzExMTAsImV4cCI6MTc1MTQ0NTUxMH0.wro7Z_B5Xdr46N3ZTNmW3L75ODiYDRJWg8nSZR6NWzE",
+      "User-Agent": "axios/0.21.4"
+    }
+  },
+  "response": {
+    "message": "Request failed with status code 404",
+    "status": 404,
+    "headers": {
+      "date": "Wed, 02 Jul 2025 07:00:20 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "743",
+      "pragma": "no-cache",
+      "cache-control": "no-store, no-cache",
+      "x-envoy-upstream-service-time": "610",
+      "x-seen-by": "T7xPrjRFKDMHVv938PYVfx9slopJdhD+WySraMrpIY8=,m0j2EEknGIVUW/liY8BLLvTX+jqwHeGzH7kT3SdjYa+WWveFEnegpnkLxzZh8fhS,rXUceJIlvIg2Ftogbhjv0NT6eE0K02hrw8U53KOfl/xEQfi00LSS7LJu7sdkoLsDSdY9VBALJ79gGZu6OWVQ+Q==,r6yY0ta7bIKrqK70x072lUIjSrViGfhUMrVcQ5hURQY=,g6VHJo1lT9njk7RvNDi4/brdUcvsQjckfIa7DGSA51rf2RhGlCUoqu3Q8nQ3EipMWIHlCalF7YnfvOr2cMPpyw==,r6yY0ta7bIKrqK70x072lUPC4xH6EeFnkFB7mZJbB80=,mvxQ9qSAmY38asKjFCcmGx0ByIX+SwxB/CcaTnejkCRJTAvV/DSUwwY7uHuIs1JBozUfvAbl+JadDnOT8gJQXJrjpH3E0iWlDh5Q9ikG6qw=,r6yY0ta7bIKrqK70x072lWGFPkNBYIG7c6YwLXMaQJQ=,mvxQ9qSAmY38asKjFCcmGx0ByIX+SwxB/CcaTnejkCRk8E9HNcS8gW/luHpeg0boUdSKarPMKhUkqL2hDzGvAliB5QmpRe2J37zq9nDD6cs=,r6yY0ta7bIKrqK70x072lWUodtMX4TNIZtgPWSzKqWc=,0fVg1FAxINxw/YYbbjBO2mDqimCJrw4UOevrdQUzyLVU6sikpKQCiCasTCDBPk/uPxcp6Gh2zp8DTh46VF8yZiSgT4SzaogRdy4JjqmQU9w=",
+      "x-wix-request-id": "1751439619.692850260378012995537",
+      "set-cookie": [
+        "XSRF-TOKEN=1751439620|AQ7t6C5NbcDO; Path=/; Domain=.wix.com; Secure; SameSite=None"
+      ],
+      "server": "Pepyaka",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=120 ; includeSubDomains",
+      "via": "1.1 google",
+      "glb-x-seen-by": "wMMTADooq5AJ3cFomJ/MuXOQWGce7NCZXKms1ErOpBs=",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+    },
+    "data": {
+      "message": "NOT_FOUND: [com.wixpress.html-client.document-management~com.wixpress.document.api.PopupService#listPopups] Failed to call getDmModels",
+      "errorCode": -100,
+      "details": {
+        "content-type": "application/grpc+proto",
+        "date": "Wed, 02 Jul 2025 07:00:20 GMT",
+        "x-envoy-upstream-service-time": "412",
+        "x-seen-by": "r6yY0ta7bIKrqK70x072lQFFpxUZgkcRGrt+L2RIykQ=",
+        "server": "envoy",
+        "applicationError": {
+          "code": "GET_DM_MODELS_ERROR",
+          "description": "NOT_FOUND: [http://10.173.170.221:81/com.wixpress.wix-html-editor-info-webapp/_rpc/DmModelsService~<none>#getDmModels] Site header with siteId: a372f911-6171-48a3-913e-d8657ffb0d7f, branchId: 00000000-0000-0000-0000-000000000000, revision: 477 was not found revision: 477. branchId: undefined."
+        },
+        "tracing": {}
+      }
+    }
+  }
+}
+----- CLI crash report at 2025-07-02T07:00:20.817Z
+Error Trace
+FailedToGetPagesDiff: FailedToGetPagesDiff
+    at <anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/sources/index.ts:45:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncPages (/usr/local/lib/node_modules/@wix/cli-site-old/src/sources/index.ts:38:20)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:37:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/usr/local/lib/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: Error: Request failed with status code 500
+    at createHttpError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/error.ts:54:10)
+    at HttpClientNode.handleRequestError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:268:26)
+    at HttpClientNode.request (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:105:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async httpRequest (/usr/local/lib/node_modules/@wix/cli-site-old/src/http-request.ts:38:12)
+    at async syncPages (/usr/local/lib/node_modules/@wix/cli-site-old/src/sources/index.ts:38:20)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:37:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+Error Info
+{
+  "layout": "GITHUB",
+  "sourcePagesPaths": [
+    "Homepage.c1dmp.js",
+    "README.md",
+    "masterPage.js"
+  ],
+  "targetRevision": "477"
+}
+Request Info
+{
+  "request": {
+    "baseURL": "https://code.wix.com",
+    "url": "/_api/wix-code-lifecycle-service/v1/pages-diff",
+    "method": "post",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+      "X-XSRF-TOKEN": "nocheck",
+      "Cookie": "XSRF-TOKEN=nocheck",
+      "User-Agent": "wix-cli",
+      "authorization": "OauthNG.JWS.eyJraWQiOiJZSEJzdUpwSCIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiaW5zdGFuY2VcIjp7XCJpbnN0YW5jZUlkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcImFwcERlZklkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcInNpZ25EYXRlXCI6XCIyMDI1LTA3LTAyVDA0OjM4OjMwLjIwMlpcIixcInVpZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJwZXJtaXNzaW9uc1wiOlwiXCIsXCJkZW1vTW9kZVwiOmZhbHNlLFwic2l0ZU93bmVySWRcIjpcIjk1MDRlZDA5LWQyMDEtNGVjYi1hMTdlLTc1ZTRhZDMzZWVjOFwiLFwibWV0YVNpdGVJZFwiOlwiNDY1YWVkNDEtZGMyZC00MWE2LTliMzQtYmE2MmVmZjYyYmIxXCIsXCJleHBpcmF0aW9uRGF0ZVwiOlwiMjAyNS0wNy0wMlQwODozODozMC4yMDJaXCIsXCJsb2dpbkFjY291bnRJZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJhb3JcIjp0cnVlfX0iLCJpYXQiOjE3NTE0MzExMTAsImV4cCI6MTc1MTQ0NTUxMH0.wro7Z_B5Xdr46N3ZTNmW3L75ODiYDRJWg8nSZR6NWzE",
+      "Content-Length": 111
+    },
+    "data": "{\"layout\":\"GITHUB\",\"sourcePagesPaths\":[\"Homepage.c1dmp.js\",\"README.md\",\"masterPage.js\"],\"targetRevision\":\"477\"}"
+  },
+  "response": {
+    "message": "Request failed with status code 500",
+    "status": 500,
+    "headers": {
+      "date": "Wed, 02 Jul 2025 07:00:20 GMT",
+      "content-type": "application/json",
+      "content-length": "128",
+      "connection": "keep-alive",
+      "x-wix-responded-by": "wix.velo.apps.v1.app:PagesDiff:com.wixpress.wixcode.wix-code-lifecycle-service",
+      "x-seen-by": "m0j2EEknGIVUW/liY8BLLtzJMCaphHxAPx835OL94mV9UuJLvoOY0uBy3RuVN3og,rXUceJIlvIg2Ftogbhjv0Mx9IrcHkgBp1VKHMSkOlrpEQfi00LSS7LJu7sdkoLsDGngf0Q4SFVIOyOMl+WQXiQ==,r6yY0ta7bIKrqK70x072lRX8lmGfm5sIH4v+qm2Kjho=",
+      "x-wix-request-id": "1751439620.396850362691023198674",
+      "set-cookie": [
+        "_wixAB3=4340805#1; Max-Age=15724800; Expires=Wed, 31 Dec 2025 07:00:20 GMT; Path=/_api/wix-code-lifecycle-service/v1/pages-diff; Domain=.wix.com",
+        "XSRF-TOKEN=1751439620|ww8Lm9GrIECr; Path=/; Domain=.wix.com; Secure; SameSite=None"
+      ],
+      "server": "Pepyaka",
+      "x-content-type-options": "nosniff"
+    },
+    "data": {
+      "message": "NOT_FOUND: Site header with siteId: a372f911-6171-48a3-913e-d8657ffb0d7f, revision: 477 was not found",
+      "details": {}
+    }
+  }
+}
+----- CLI crash report at 2025-07-02T07:03:51.588Z
+Error Trace
+FailedToFetchPackageDetails: FailedToFetchPackageDetails
+    at fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:54:11)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteCache: FailedToWriteCache
+    at Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:75:13)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteJson: FailedToWriteJson
+    at writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:29:11)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@wix/cli/version.cache.json'
+    at async open (node:internal/fs/promises:638:25)
+    at async writeFile (node:internal/fs/promises:1212:14)
+    at async writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:27:5)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+Error Info
+{}
+----- CLI crash report at 2025-07-02T07:03:53.977Z
+Error Trace
+FailedToSyncToRevision: FailedToSyncToRevision
+    at syncTypesWithAuth (/usr/local/lib/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:27:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/usr/local/lib/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: FailedToFetchPagesTypes: Failed to fetch the types of the site pages (revision 477)
+    at fetchPagesData (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:600:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncRevisionTypes (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:1125:21)
+    at async syncTypesWithAuth (/usr/local/lib/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:17:5)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/usr/local/lib/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: Error: Request failed with status code 404
+    at createHttpError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/error.ts:54:10)
+    at HttpClientNode.handleRequestError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:268:26)
+    at HttpClientNode.request (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:105:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async httpRequest (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:290:12)
+    at async fetchPagesData (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:591:16)
+    at async syncRevisionTypes (/usr/local/lib/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:1125:21)
+    at async syncTypesWithAuth (/usr/local/lib/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:17:5)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+Error Info
+{
+  "metaSiteId": "465aed41-dc2d-41a6-9b34-ba62eff62bb1",
+  "revision": "477",
+  "model": {
+    "projectFolder": "/Users/vish/Documents/Projects/vishrmsh_personal",
+    "metaSiteId": "465aed41-dc2d-41a6-9b34-ba62eff62bb1",
+    "revision": "477"
+  }
+}
+Request Info
+{
+  "request": {
+    "baseURL": "https://editor.wix.com",
+    "url": "/_serverless/typok/v1/site/465aed41-dc2d-41a6-9b34-ba62eff62bb1/477",
+    "method": "get",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "authorization": "OauthNG.JWS.eyJraWQiOiJZSEJzdUpwSCIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiaW5zdGFuY2VcIjp7XCJpbnN0YW5jZUlkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcImFwcERlZklkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcInNpZ25EYXRlXCI6XCIyMDI1LTA3LTAyVDA0OjM4OjMwLjIwMlpcIixcInVpZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJwZXJtaXNzaW9uc1wiOlwiXCIsXCJkZW1vTW9kZVwiOmZhbHNlLFwic2l0ZU93bmVySWRcIjpcIjk1MDRlZDA5LWQyMDEtNGVjYi1hMTdlLTc1ZTRhZDMzZWVjOFwiLFwibWV0YVNpdGVJZFwiOlwiNDY1YWVkNDEtZGMyZC00MWE2LTliMzQtYmE2MmVmZjYyYmIxXCIsXCJleHBpcmF0aW9uRGF0ZVwiOlwiMjAyNS0wNy0wMlQwODozODozMC4yMDJaXCIsXCJsb2dpbkFjY291bnRJZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJhb3JcIjp0cnVlfX0iLCJpYXQiOjE3NTE0MzExMTAsImV4cCI6MTc1MTQ0NTUxMH0.wro7Z_B5Xdr46N3ZTNmW3L75ODiYDRJWg8nSZR6NWzE",
+      "User-Agent": "axios/0.21.4"
+    }
+  },
+  "response": {
+    "message": "Request failed with status code 404",
+    "status": 404,
+    "headers": {
+      "date": "Wed, 02 Jul 2025 07:03:53 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "741",
+      "pragma": "no-cache",
+      "cache-control": "no-store, no-cache",
+      "x-seen-by": "1ev8u3tblITHmgXkyGXE9h9slopJdhD+WySraMrpIY8=,m0j2EEknGIVUW/liY8BLLu9cMEtJpWXO9F4rbPCZT459UuJLvoOY0uBy3RuVN3og,rXUceJIlvIg2Ftogbhjv0Ev+AKzXhKfUxxjSo99v9ndEQfi00LSS7LJu7sdkoLsDNSxF/iJrP0zKe0jHbCrR5w==,r6yY0ta7bIKrqK70x072lUIjSrViGfhUMrVcQ5hURQY=,g6VHJo1lT9njk7RvNDi4/a+GPerLOf5gVpkKfwyn2TsehsbmLENmxsWDrdJmvBKcCONUzZLbexpS3PEZaUF96g==,r6yY0ta7bIKrqK70x072lZSdpmdolQ9RNaLcbDoTAT8=,mvxQ9qSAmY38asKjFCcmGx0ByIX+SwxB/CcaTnejkCQoVE6yYRl2H6ACPn4IXWt8bBqCr2nLRG26f8UuFZzJr1iB5QmpRe2J37zq9nDD6cs=,r6yY0ta7bIKrqK70x072lbjdGL8qn1H3QOqyW5lVuYk=,mvxQ9qSAmY38asKjFCcmGx0ByIX+SwxB/CcaTnejkCTD27gNofdryeBsuDGk0hpUkQIuBdsT6OjgaeI8s7cz8FZ3fGeIyyvUeOuzMoa8zOs=,r6yY0ta7bIKrqK70x072lWUodtMX4TNIZtgPWSzKqWc=,0fVg1FAxINxw/YYbbjBO2mDqimCJrw4UOevrdQUzyLWF7Af9KsXEhmfSiVu9JCCDPxcp6Gh2zp8DTh46VF8yZr2vRydQyHoLUJHfuQTNGDs=",
+      "x-wix-request-id": "1751439833.401489743650521334751, 1751439833.401489743650521334751",
+      "set-cookie": [
+        "XSRF-TOKEN=1751439833|2T47pipQ_yTw; Path=/; Domain=.wix.com; Secure; SameSite=None"
+      ],
+      "server": "Pepyaka",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=120 ; includeSubDomains",
+      "via": "1.1 google",
+      "glb-x-seen-by": "wMMTADooq5AJ3cFomJ/MuXOQWGce7NCZXKms1ErOpBs=",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+    },
+    "data": {
+      "message": "NOT_FOUND: [com.wixpress.html-client.document-management~com.wixpress.document.api.PageService#listPages] Failed to call getDmModels",
+      "errorCode": -100,
+      "details": {
+        "content-type": "application/grpc+proto",
+        "date": "Wed, 02 Jul 2025 07:03:53 GMT",
+        "x-envoy-upstream-service-time": "434",
+        "x-seen-by": "r6yY0ta7bIKrqK70x072lbvypttdkLeihfjVqFiRGys=",
+        "server": "envoy",
+        "applicationError": {
+          "code": "GET_DM_MODELS_ERROR",
+          "description": "NOT_FOUND: [http://10.173.170.221:81/com.wixpress.wix-html-editor-info-webapp/_rpc/DmModelsService~<none>#getDmModels] Site header with siteId: a372f911-6171-48a3-913e-d8657ffb0d7f, branchId: 00000000-0000-0000-0000-000000000000, revision: 477 was not found revision: 477. branchId: undefined."
+        },
+        "tracing": {}
+      }
+    }
+  }
+}
+----- CLI crash report at 2025-07-02T07:03:54.501Z
+Error Trace
+FailedToGetPagesDiff: FailedToGetPagesDiff
+    at <anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/sources/index.ts:45:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncPages (/usr/local/lib/node_modules/@wix/cli-site-old/src/sources/index.ts:38:20)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:37:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/usr/local/lib/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: Error: Request failed with status code 500
+    at createHttpError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/error.ts:54:10)
+    at HttpClientNode.handleRequestError (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:268:26)
+    at HttpClientNode.request (/usr/local/lib/node_modules/node_modules/@wix/http-client/src/http-client.ts:105:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async httpRequest (/usr/local/lib/node_modules/@wix/cli-site-old/src/http-request.ts:38:12)
+    at async syncPages (/usr/local/lib/node_modules/@wix/cli-site-old/src/sources/index.ts:38:20)
+    at async syncAllToRevision (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:37:5)
+    at async dev (/usr/local/lib/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/usr/local/lib/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+Error Info
+{
+  "layout": "GITHUB",
+  "sourcePagesPaths": [
+    "Homepage.c1dmp.js",
+    "README.md",
+    "masterPage.js"
+  ],
+  "targetRevision": "477"
+}
+Request Info
+{
+  "request": {
+    "baseURL": "https://code.wix.com",
+    "url": "/_api/wix-code-lifecycle-service/v1/pages-diff",
+    "method": "post",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+      "X-XSRF-TOKEN": "nocheck",
+      "Cookie": "XSRF-TOKEN=nocheck",
+      "User-Agent": "wix-cli",
+      "authorization": "OauthNG.JWS.eyJraWQiOiJZSEJzdUpwSCIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiaW5zdGFuY2VcIjp7XCJpbnN0YW5jZUlkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcImFwcERlZklkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcInNpZ25EYXRlXCI6XCIyMDI1LTA3LTAyVDA0OjM4OjMwLjIwMlpcIixcInVpZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJwZXJtaXNzaW9uc1wiOlwiXCIsXCJkZW1vTW9kZVwiOmZhbHNlLFwic2l0ZU93bmVySWRcIjpcIjk1MDRlZDA5LWQyMDEtNGVjYi1hMTdlLTc1ZTRhZDMzZWVjOFwiLFwibWV0YVNpdGVJZFwiOlwiNDY1YWVkNDEtZGMyZC00MWE2LTliMzQtYmE2MmVmZjYyYmIxXCIsXCJleHBpcmF0aW9uRGF0ZVwiOlwiMjAyNS0wNy0wMlQwODozODozMC4yMDJaXCIsXCJsb2dpbkFjY291bnRJZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJhb3JcIjp0cnVlfX0iLCJpYXQiOjE3NTE0MzExMTAsImV4cCI6MTc1MTQ0NTUxMH0.wro7Z_B5Xdr46N3ZTNmW3L75ODiYDRJWg8nSZR6NWzE",
+      "Content-Length": 111
+    },
+    "data": "{\"layout\":\"GITHUB\",\"sourcePagesPaths\":[\"Homepage.c1dmp.js\",\"README.md\",\"masterPage.js\"],\"targetRevision\":\"477\"}"
+  },
+  "response": {
+    "message": "Request failed with status code 500",
+    "status": 500,
+    "headers": {
+      "date": "Wed, 02 Jul 2025 07:03:54 GMT",
+      "content-type": "application/json",
+      "content-length": "128",
+      "connection": "keep-alive",
+      "x-wix-responded-by": "wix.velo.apps.v1.app:PagesDiff:com.wixpress.wixcode.wix-code-lifecycle-service",
+      "x-seen-by": "m0j2EEknGIVUW/liY8BLLvTX+jqwHeGzH7kT3SdjYa+WWveFEnegpnkLxzZh8fhS,rXUceJIlvIg2Ftogbhjv0McPxchjydjpX1K6RI4W2WxEQfi00LSS7LJu7sdkoLsD/yq56ivp5F0hLfv8wtR92A==,r6yY0ta7bIKrqK70x072lR55CBM+UZOlng8bNSj0hEU=",
+      "x-wix-request-id": "1751439834.107850317978022995537",
+      "set-cookie": [
+        "XSRF-TOKEN=1751439834|TvD63bepum-e; Path=/; Domain=.wix.com; Secure; SameSite=None"
+      ],
+      "server": "Pepyaka",
+      "x-content-type-options": "nosniff"
+    },
+    "data": {
+      "message": "NOT_FOUND: Site header with siteId: a372f911-6171-48a3-913e-d8657ffb0d7f, revision: 477 was not found",
+      "details": {}
+    }
+  }
+}
+----- CLI crash report at 2025-07-02T19:29:29.064Z
+Error Trace
+FailedToSyncToRevision: FailedToSyncToRevision
+    at syncTypesWithAuth (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:27:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncAllToRevision (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: FailedToFetchPagesTypes: Failed to fetch the types of the site pages (revision 477)
+    at fetchPagesData (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:600:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncRevisionTypes (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:1125:21)
+    at async syncTypesWithAuth (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:17:5)
+    at async syncAllToRevision (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: Error: Request failed with status code 404
+    at createHttpError (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/http-client/src/error.ts:54:10)
+    at HttpClientNode.handleRequestError (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/http-client/src/http-client.ts:268:26)
+    at HttpClientNode.request (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/http-client/src/http-client.ts:105:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async httpRequest (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:290:12)
+    at async fetchPagesData (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:591:16)
+    at async syncRevisionTypes (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/velo-site-types-syncer/build/index.js:1125:21)
+    at async syncTypesWithAuth (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/sync-types/sync-types-with-auth.ts:17:5)
+    at async syncAllToRevision (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:20:5)
+    at async dev (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+Error Info
+{
+  "metaSiteId": "465aed41-dc2d-41a6-9b34-ba62eff62bb1",
+  "revision": "477",
+  "model": {
+    "projectFolder": "/Users/vish/Documents/Projects/vishrmsh_personal",
+    "metaSiteId": "465aed41-dc2d-41a6-9b34-ba62eff62bb1",
+    "revision": "477"
+  }
+}
+Request Info
+{
+  "request": {
+    "baseURL": "https://editor.wix.com",
+    "url": "/_serverless/typok/v1/site/465aed41-dc2d-41a6-9b34-ba62eff62bb1/477",
+    "method": "get",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "authorization": "OauthNG.JWS.eyJraWQiOiJZSEJzdUpwSCIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiaW5zdGFuY2VcIjp7XCJpbnN0YW5jZUlkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcImFwcERlZklkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcInNpZ25EYXRlXCI6XCIyMDI1LTA3LTAyVDE5OjI5OjI0LjgxMlpcIixcInVpZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJwZXJtaXNzaW9uc1wiOlwiXCIsXCJkZW1vTW9kZVwiOmZhbHNlLFwic2l0ZU93bmVySWRcIjpcIjk1MDRlZDA5LWQyMDEtNGVjYi1hMTdlLTc1ZTRhZDMzZWVjOFwiLFwibWV0YVNpdGVJZFwiOlwiNDY1YWVkNDEtZGMyZC00MWE2LTliMzQtYmE2MmVmZjYyYmIxXCIsXCJleHBpcmF0aW9uRGF0ZVwiOlwiMjAyNS0wNy0wMlQyMzoyOToyNC44MTJaXCIsXCJsb2dpbkFjY291bnRJZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJhb3JcIjp0cnVlfX0iLCJpYXQiOjE3NTE0ODQ1NjQsImV4cCI6MTc1MTQ5ODk2NH0.y1gUYaByncfLcfvmQto01aA9ClrcKI4jnkvrXIGs49k",
+      "User-Agent": "axios/0.21.4"
+    }
+  },
+  "response": {
+    "message": "Request failed with status code 404",
+    "status": 404,
+    "headers": {
+      "date": "Wed, 02 Jul 2025 19:29:29 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "content-length": "741",
+      "pragma": "no-cache",
+      "cache-control": "no-store, no-cache",
+      "x-seen-by": "dwc60INy8NFddnU/0WdlOB9slopJdhD+WySraMrpIY8=,m0j2EEknGIVUW/liY8BLLtxC2QzlrRbAAvzqVquzIn45XEckg9t2+jA6cQOj+vGJ,qYxvFa0bBL43z6b6TutC4eSPGzth/Vo67KiMjb0Cf8xs002pl/581Fem1iGtKG3Hihj8HwueSo1OR4w19FiV8g==,rxBxDi+J9K6QPHkMw7bX2ayuD/p/tVsI5m13vPGvGJU=,kH0Y/37dpY6JCMOxX5pPTstl630mxvrs942HG1jOMLhaYUKbL8QMOzVrmszA4UYH,lP5CN577y5orUcAY6k+LKhRLyXrQyxXrW6Yr//hJDgU=,mvxQ9qSAmY38asKjFCcmGzH+E8YeNTc30N2AcS+9nJtFyk3Qh8BDdibNK31ATL129fa1zSHMeupIdidQgU+0UA==,jazpUP5B5hUz1ogdMx16cQjkP0y5JQR1upxnwCJYWlU=,mvxQ9qSAmY38asKjFCcmGzH+E8YeNTc30N2AcS+9nJtoPntpHvs3fOw68McpRgN0RlIswtZLoP9sCWDVyba0NQ==,8HVCFWeSgKagGUusPy4CwFXEVyR8tyiDcnW1Ja5s40M=,0fVg1FAxINxw/YYbbjBO2nv9evwa3TvbTbleTKIZHr9ixa7AJ8SShYHhskWizXXFlchZSz6GbVTDEGrjB2zanVmp1yJQxlMgHnhXjh2Hlrk=",
+      "x-wix-request-id": "1751484568.45620724139842235036, 1751484568.45620724139842235036",
+      "set-cookie": [
+        "XSRF-TOKEN=1751484569|OU9jOIa3t8kP; Path=/; Domain=.wix.com; Secure; SameSite=None"
+      ],
+      "server": "Pepyaka",
+      "x-content-type-options": "nosniff",
+      "strict-transport-security": "max-age=120 ; includeSubDomains",
+      "via": "1.1 google",
+      "glb-x-seen-by": "wMMTADooq5AJ3cFomJ/MuXOQWGce7NCZXKms1ErOpBs=",
+      "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+    },
+    "data": {
+      "message": "NOT_FOUND: [com.wixpress.html-client.document-management~com.wixpress.document.api.PopupService#listPopups] Failed to call getDmModels",
+      "errorCode": -100,
+      "details": {
+        "content-type": "application/grpc+proto",
+        "date": "Wed, 02 Jul 2025 19:29:29 GMT",
+        "x-envoy-upstream-service-time": "526",
+        "x-seen-by": "kS4jUM3TdHLlbElIcvfTR4fllrTvsMzJCrUysE4japw=",
+        "server": "envoy",
+        "applicationError": {
+          "code": "GET_DM_MODELS_ERROR",
+          "description": "NOT_FOUND: [http://10.43.160.91:81/com.wixpress.wix-html-editor-info-webapp/_rpc/DmModelsService~<none>#getDmModels] Site header with siteId: a372f911-6171-48a3-913e-d8657ffb0d7f, branchId: 00000000-0000-0000-0000-000000000000, revision: 477 was not found revision: 477. branchId: undefined."
+        },
+        "tracing": {}
+      }
+    }
+  }
+}
+----- CLI crash report at 2025-07-02T19:29:29.925Z
+Error Trace
+FailedToGetPagesDiff: FailedToGetPagesDiff
+    at <anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/sources/index.ts:45:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async syncPages (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/sources/index.ts:38:20)
+    at async syncAllToRevision (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:37:5)
+    at async dev (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+    at async _Command.parseAsync (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/commander/lib/command.js:1104:5)
+    at async <anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli/src/index.tsx:80:25)
+caused by: Error: Request failed with status code 500
+    at createHttpError (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/http-client/src/error.ts:54:10)
+    at HttpClientNode.handleRequestError (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/http-client/src/http-client.ts:268:26)
+    at HttpClientNode.request (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/node_modules/@wix/http-client/src/http-client.ts:105:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async httpRequest (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/http-request.ts:38:12)
+    at async syncPages (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/sources/index.ts:38:20)
+    at async syncAllToRevision (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/sync-all-to-revision.ts:37:5)
+    at async dev (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/dev/dev.ts:68:3)
+    at async runCommand (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/run-command.ts:39:5)
+    at async _Command.<anonymous> (/Users/vish/Documents/Projects/vishrmsh_personal/node_modules/@wix/cli-site-old/src/commands/dev.ts:21:7)
+Error Info
+{
+  "layout": "GITHUB",
+  "sourcePagesPaths": [
+    "Homepage.c1dmp.js",
+    "README.md",
+    "masterPage.js"
+  ],
+  "targetRevision": "477"
+}
+Request Info
+{
+  "request": {
+    "baseURL": "https://code.wix.com",
+    "url": "/_api/wix-code-lifecycle-service/v1/pages-diff",
+    "method": "post",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+      "X-XSRF-TOKEN": "nocheck",
+      "Cookie": "XSRF-TOKEN=nocheck",
+      "User-Agent": "wix-cli",
+      "authorization": "OauthNG.JWS.eyJraWQiOiJZSEJzdUpwSCIsImFsZyI6IkhTMjU2In0.eyJkYXRhIjoie1wiaW5zdGFuY2VcIjp7XCJpbnN0YW5jZUlkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcImFwcERlZklkXCI6XCI2Zjk1Y2VjOC0zZTk4LTQ4YjktYjRlNS0xZmI5MmZjZDk5NzNcIixcInNpZ25EYXRlXCI6XCIyMDI1LTA3LTAyVDE5OjI5OjI0LjgxMlpcIixcInVpZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJwZXJtaXNzaW9uc1wiOlwiXCIsXCJkZW1vTW9kZVwiOmZhbHNlLFwic2l0ZU93bmVySWRcIjpcIjk1MDRlZDA5LWQyMDEtNGVjYi1hMTdlLTc1ZTRhZDMzZWVjOFwiLFwibWV0YVNpdGVJZFwiOlwiNDY1YWVkNDEtZGMyZC00MWE2LTliMzQtYmE2MmVmZjYyYmIxXCIsXCJleHBpcmF0aW9uRGF0ZVwiOlwiMjAyNS0wNy0wMlQyMzoyOToyNC44MTJaXCIsXCJsb2dpbkFjY291bnRJZFwiOlwiOTUwNGVkMDktZDIwMS00ZWNiLWExN2UtNzVlNGFkMzNlZWM4XCIsXCJhb3JcIjp0cnVlfX0iLCJpYXQiOjE3NTE0ODQ1NjQsImV4cCI6MTc1MTQ5ODk2NH0.y1gUYaByncfLcfvmQto01aA9ClrcKI4jnkvrXIGs49k",
+      "Content-Length": 111
+    },
+    "data": "{\"layout\":\"GITHUB\",\"sourcePagesPaths\":[\"Homepage.c1dmp.js\",\"README.md\",\"masterPage.js\"],\"targetRevision\":\"477\"}"
+  },
+  "response": {
+    "message": "Request failed with status code 500",
+    "status": 500,
+    "headers": {
+      "date": "Wed, 02 Jul 2025 19:29:29 GMT",
+      "content-type": "application/json",
+      "content-length": "128",
+      "connection": "keep-alive",
+      "x-wix-responded-by": "wix.velo.apps.v1.app:PagesDiff:com.wixpress.wixcode.wix-code-lifecycle-service",
+      "x-seen-by": "m0j2EEknGIVUW/liY8BLLuibZi/iBWUtL5du4fKyNvc5XEckg9t2+jA6cQOj+vGJ,qYxvFa0bBL43z6b6TutC4eC47/eKvTJq8SUXNyBer1sSoAqOnaR3iaXIaEgmTst7EqyeR3LK7v0f/qnQ7iNHMQ==,XAQdnUsTrWTZxlSOrsTFdmiADpvemCJCfFfYawh2mxA=",
+      "x-wix-request-id": "1751484569.2622072883982294150",
+      "set-cookie": [
+        "XSRF-TOKEN=1751484569|PST-v3F0m2jY; Path=/; Domain=.wix.com; Secure; SameSite=None"
+      ],
+      "server": "Pepyaka",
+      "x-content-type-options": "nosniff"
+    },
+    "data": {
+      "message": "NOT_FOUND: Site header with siteId: a372f911-6171-48a3-913e-d8657ffb0d7f, revision: 477 was not found",
+      "details": {}
+    }
+  }
+}
