@@ -9,26 +9,16 @@ import wixLocation from 'wix-location';
 import wixWindow from 'wix-window';
 
 $w.onReady(function () {
-    console.log('🚀 Loading Dr. Vish Ramesh Professional Portfolio...');
-    
-    // Check if page has elements, if not create them
     const allElements = $w('*');
-    console.log(`Found ${allElements.length} elements on page`);
     
     if (allElements.length === 0) {
-        console.log('📝 Empty page detected - creating elements...');
         createPortfolioElements();
     } else {
-        console.log('📝 Updating existing elements...');
         updateExistingElements();
     }
-    
-    console.log('✅ Professional Portfolio Ready!');
 });
 
 function createPortfolioElements() {
-    // Since we can't dynamically create elements in Wix, guide user
-    console.log('');
     console.log('🎯 TO CREATE YOUR PORTFOLIO:');
     console.log('1. Click "Back to Editor"');
     console.log('2. Add these elements from the left panel:');
@@ -36,13 +26,11 @@ function createPortfolioElements() {
     console.log('   🖼️ Images (2 for headshot + logo)');
     console.log('   🔘 Buttons (4-5 for your links)');
     console.log('3. Click "Preview" again');
-    console.log('');
     console.log('✨ Your content will then appear automatically!');
 }
 
 function updateExistingElements() {
     try {
-        // Professional content
         const content = [
             'Dr. Vish Ramesh, PhD',
             'CEO & Founder of Vy Labs AI', 
@@ -68,16 +56,13 @@ function updateExistingElements() {
             'vramesh@vylabs.ai - Professional inquiries welcome'
         ];
         
-        // Get all elements
         const allElements = $w('*');
-        
-        // Update text elements
         let textIndex = 0;
+        
         allElements.forEach((element, index) => {
             if (element.type === 'Text' && textIndex < content.length) {
                 element.text = content[textIndex];
                 
-                // Make email clickable
                 if (content[textIndex].includes('vramesh@vylabs.ai')) {
                     element.onClick(() => {
                         const mailtoLink = 'mailto:vramesh@vylabs.ai?subject=Professional Inquiry - Dr. Vish Ramesh&body=Hello Dr. Ramesh,%0A%0AI would like to discuss...%0A%0ABest regards,';
@@ -85,32 +70,26 @@ function updateExistingElements() {
                     });
                 }
                 
-                // Make companies clickable
                 if (content[textIndex].includes('Vy Labs AI')) {
                     element.onClick(() => window.open('https://vylabs.ai/', '_blank'));
                 }
                 
                 textIndex++;
-                console.log(`✅ Updated: ${content[textIndex-1].substring(0,40)}...`);
             }
             
-            // Update images
             if (element.type === 'Image') {
                 if (index === 0) {
                     element.src = 'https://static.wixstatic.com/media/2f91b7_f8b8e7d4c6a1486b9d5e3f2a1b0c9d8e~mv2.jpg';
                     element.alt = 'Dr. Vish Ramesh - CEO & Founder of Vy Labs AI';
                     element.onClick(() => window.open('https://vylabs.ai/', '_blank'));
-                    console.log('✅ Professional headshot loaded');
                 }
                 if (index === 1) {
                     element.src = 'https://static.wixstatic.com/media/2f91b7_logo~mv2.jpg';
                     element.alt = 'Vy Labs AI - Bringing AI to All';
                     element.onClick(() => window.open('https://vylabs.ai/', '_blank'));
-                    console.log('✅ Vy Labs logo loaded');
                 }
             }
             
-            // Update buttons
             if (element.type === 'Button') {
                 const buttonLinks = [
                     { label: 'Vy Labs AI', url: 'https://vylabs.ai/' },
@@ -125,15 +104,12 @@ function updateExistingElements() {
                 if (buttonIndex < buttonLinks.length) {
                     element.label = buttonLinks[buttonIndex].label;
                     element.onClick(() => window.open(buttonLinks[buttonIndex].url, '_blank'));
-                    console.log(`✅ Setup button: ${buttonLinks[buttonIndex].label}`);
                 }
             }
         });
         
-        console.log('✅ Portfolio content updated successfully!');
-        
     } catch (error) {
-        console.log('Portfolio update completed');
+        // Silent error handling
     }
 }
 
