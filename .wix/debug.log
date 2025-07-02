@@ -2213,3 +2213,22 @@ caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@
     at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
 Error Info
 {}
+----- CLI crash report at 2025-07-02T07:16:29.315Z
+Error Trace
+DeviceCodeTimedOut: DeviceCodeTimedOut
+    at waitForLogin (/workspace/node_modules/@wix/cli-auth/src/auth-strategies/account-auth-strategy.ts:63:13)
+    at async login (/workspace/node_modules/@wix/cli-auth/src/auth-strategies/account-auth-strategy.ts:158:25)
+    at async <anonymous> (/workspace/node_modules/@wix/cli-auth/src/components/Login.tsx:48:26)
+caused by: TimeoutError: Promise timed out after 600000 milliseconds
+    at <anonymous> (/workspace/node_modules/node_modules/p-timeout/index.js:73:24)
+    at new Promise (<anonymous>)
+    at pTimeout (/workspace/node_modules/node_modules/p-timeout/index.js:49:25)
+    at pWaitFor (/workspace/node_modules/node_modules/p-wait-for/index.js:46:16)
+    at waitForLogin (/workspace/node_modules/@wix/cli-auth/src/auth-strategies/account-auth-strategy.ts:28:28)
+    at login (/workspace/node_modules/@wix/cli-auth/src/auth-strategies/account-auth-strategy.ts:158:31)
+    at <anonymous> (/workspace/node_modules/@wix/cli-auth/src/components/Login.tsx:48:32)
+    at <anonymous> (/workspace/node_modules/node_modules/react-async-hook/src/index.ts:257:59)
+    at executeAsyncOperation2 (/workspace/node_modules/node_modules/react-async-hook/src/index.ts:257:33)
+    at Object.execute (/workspace/node_modules/node_modules/react-async-hook/src/index.ts:285:48)
+Error Info
+{}
