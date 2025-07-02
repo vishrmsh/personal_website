@@ -1514,3 +1514,57 @@ Request Info
     }
   }
 }
+----- CLI crash report at 2025-07-02T05:51:49.888Z
+Error Trace
+FailedToFetchPackageDetails: FailedToFetchPackageDetails
+    at fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:54:11)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteCache: FailedToWriteCache
+    at Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:75:13)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteJson: FailedToWriteJson
+    at writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:29:11)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@wix/cli/version.cache.json'
+    at async open (node:internal/fs/promises:638:25)
+    at async writeFile (node:internal/fs/promises:1212:14)
+    at async writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:27:5)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+Error Info
+{}
+----- CLI crash report at 2025-07-02T05:51:55.588Z
+Error Trace
+FailedToFetchPackageDetails: FailedToFetchPackageDetails
+    at fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:54:11)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteCache: FailedToWriteCache
+    at Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:75:13)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: FailedToWriteJson: FailedToWriteJson
+    at writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:29:11)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+caused by: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/@wix/cli/version.cache.json'
+    at async open (node:internal/fs/promises:638:25)
+    at async writeFile (node:internal/fs/promises:1212:14)
+    at async writeJson (/usr/local/lib/node_modules/@wix/cli-fs/src/index.ts:27:5)
+    at async Object.set (/usr/local/lib/node_modules/@wix/cli-fs-cache/src/index.ts:69:7)
+    at async fetchPackageDetails (/usr/local/lib/node_modules/@wix/cli-version-manager/src/package-details-reader.ts:49:7)
+    at async versionNotifier (/usr/local/lib/node_modules/@wix/cli-version-manager/src/version-notifier.tsx:8:26)
+    at async <anonymous> (/usr/local/lib/node_modules/@wix/cli/src/index.tsx:56:26)
+Error Info
+{}
