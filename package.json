@@ -1,4 +1,13 @@
 {
+  "name": "vishrmsh-personal-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for Dr. Vish Ramesh - CEO & Founder of Vy Labs AI",
+  "author": "Dr. Vish Ramesh <vramesh@vylabs.ai>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishrmsh/personal_website.git"
+  },
+  "homepage": "https://www.vishramesh.com",
   "devDependencies": {
     "@wix/cli": "^1.0.0",
     "@wix/eslint-plugin-cli": "^1.0.0",
@@ -6,8 +15,8 @@
     "react": "16.14.0"
   },
   "scripts": {
-    "postinstall": "wix sync-types",
     "dev": "wix dev",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "sync": "wix sync-types"
   }
 }
