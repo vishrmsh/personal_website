@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/vishrmsh/personal_website.git"
   },
-  "homepage": "https://www.vishramesh.com",
+  "homepage": "https://www.vishrmsh.com",
   "devDependencies": {
     "@wix/cli": "^1.0.0",
     "@wix/eslint-plugin-cli": "^1.0.0",

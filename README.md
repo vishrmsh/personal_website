@@ -104,7 +104,8 @@ This repository is connected to:
 - **GitHub**: https://github.com/vishrmsh/personal_website.git
 - **Wix Development Site**: 465aed41-dc2d-41a6-9b34-ba62eff62bb1
 - **Wix Live Editor**: https://editor.wix.com/html/editor/web/renderer/edit/a372f911-6171-48a3-913e-d8657ffb0d7f
-- **Domain**: www.vishramesh.com
+- **Primary Domain**: www.vishrmsh.com
+- **Redirect Domain**: www.vishramesh.com → www.vishrmsh.com
 - **Account**: vish93@gmail.com
 
 ### Site ID Information
