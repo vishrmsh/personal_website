@@ -1,0 +1,326 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.page {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Section Base Styles */
+.hero-section,
+.content-card,
+.links-section,
+.social-section {
+    border-radius: 12px;
+    padding: 32px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-section {
+    animation-delay: 0s;
+}
+
+.content-card {
+    animation-delay: 0.2s;
+}
+
+.links-section {
+    animation-delay: 0.4s;
+}
+
+.social-section {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h1.name {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.hero-content h2.title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #0066CC;
+    margin-bottom: 12px;
+}
+
+.hero-content .tagline {
+    font-size: 18px;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.hero-content .summary {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+/* Content Card */
+.content-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.content-section {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #0066CC;
+    padding-bottom: 8px;
+}
+
+.section-content {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.dissertation-highlight {
+    font-weight: 600;
+    color: #0066CC;
+    background-color: rgba(0, 102, 204, 0.05);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 4px 0;
+}
+
+.dissertation-highlight:hover {
+    background-color: rgba(0, 102, 204, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+}
+
+/* Links Section */
+.links-section h3,
+.social-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Button Styles */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #f8f9fa;
+    color: #495057;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background-color: #0066CC;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 12px 35px rgba(0, 102, 204, 0.4);
+    background-color: #0052a3;
+}
+
+.btn-linkedin {
+    background-color: #0a66c2;
+    color: white;
+    box-shadow: 0 4px 15px rgba(10, 102, 194, 0.2);
+}
+
+.btn-linkedin:hover {
+    background-color: #094a92;
+    box-shadow: 0 8px 25px rgba(10, 102, 194, 0.3);
+}
+
+.btn-threads {
+    background-color: #000;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-threads:hover {
+    background-color: #333;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-email {
+    background-color: #28a745;
+    color: white;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.2);
+}
+
+.btn-email:hover {
+    background-color: #1e7e34;
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .hero-section,
+    .content-card,
+    .links-section,
+    .social-section {
+        padding: 20px;
+    }
+
+    .hero-content h1.name {
+        font-size: 36px;
+    }
+
+    .hero-content h2.title {
+        font-size: 20px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content-card {
+        grid-template-columns: 1fr;
+    }
+
+    .button-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1.name {
+        font-size: 28px;
+    }
+
+    .hero-content h2.title {
+        font-size: 18px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+}

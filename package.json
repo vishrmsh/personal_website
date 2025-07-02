@@ -16,6 +16,8 @@
   },
   "scripts": {
     "dev": "wix dev",
+    "local": "node local-server.js",
+    "start": "node local-server.js",
     "lint": "eslint .",
     "sync": "wix sync-types",
     "push": "./push-changes.sh",
