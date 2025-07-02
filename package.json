@@ -17,6 +17,10 @@
   "scripts": {
     "dev": "wix dev",
     "lint": "eslint .",
-    "sync": "wix sync-types"
+    "sync": "wix sync-types",
+    "push": "./push-changes.sh",
+    "quick-push": "./push-changes.sh 'Quick update'",
+    "save": "git add . && git commit -m 'Save progress' && git push origin main",
+    "backup": "git add . && git commit -m 'Backup: $(date)' && git push origin main"
   }
 }
