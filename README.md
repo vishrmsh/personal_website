@@ -84,7 +84,10 @@ The portfolio automatically updates when you:
 2. Run `wix dev` for local testing
 3. Use `npm run push` to deploy to live site
 
-## 📧 Contact Integration
+## 📧 Contact
+
+**Email**: vramesh@vylabs.ai  
+**Professional Inquiries**: Welcome
 
 Professional email integration with pre-formatted inquiry template:
 ```
